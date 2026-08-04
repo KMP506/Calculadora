@@ -10,6 +10,11 @@ package vista;
  */
 public class FrmCalculadora extends javax.swing.JFrame {
     
+    
+    public void setTextoPantalla(String texto){
+        txtPantalla.setText(texto);
+    }
+    
     private static final java.util.logging.Logger logger = java.util.logging.Logger.getLogger(FrmCalculadora.class.getName());
 
     /**

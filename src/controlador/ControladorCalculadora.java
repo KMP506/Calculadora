@@ -14,156 +14,154 @@ import javax.swing.JOptionPane;
 
 public class ControladorCalculadora {
 
-    private Calculadora modelo;
-    private FrmCalculadora vista;
+     private modelo.Calculadora calculadora;
+    private vista.FrmCalculadora frmCalculadora;
 
-    private String valorActual = "";
-    private double primerValor;
+    private String numeroActual = "";
+    private double numero1;
     private String operacion = "";
+    private boolean resultadoListo = false;
 
-    public ControladorCalculadora(Calculadora modelo, FrmCalculadora vista) {
-        this.modelo = modelo;
-        this.vista = vista;
+    public ControladorCalculadora(
+            modelo.Calculadora calculadora,
+            vista.FrmCalculadora frmCalculadora) {
+
+        this.calculadora = calculadora;
+        this.frmCalculadora = frmCalculadora;
     }
 
-    // Agregar números
     public void agregarNumero(String numero) {
-        valorActual += numero;
-        vista.setTextoPantalla(valorActual);
+
+        if(resultadoListo){
+            numeroActual = "";
+            resultadoListo = false;
+        }
+
+        numeroActual=numeroActual+numero;
+        frmCalculadora.setTextoPantalla(numeroActual);
     }
 
-    // Agregar punto decimal
     public void agregarPunto() {
-        if (!valorActual.contains(".")) {
-            if (valorActual.isEmpty()) {
-                valorActual = "0.";
-            } else {
-                valorActual += ".";
+
+        if(!numeroActual.contains(".")) {
+
+            if(numeroActual.isEmpty()) {
+                numeroActual = "0.";
+            }else{
+                numeroActual = numeroActual + ".";
             }
-            vista.setTextoPantalla(valorActual);
+            frmCalculadora.setTextoPantalla(numeroActual);
         }
     }
 
-    // Cambiar signo
     public void cambiarSigno() {
-        if (!valorActual.isEmpty()) {
-            if (valorActual.startsWith("-")) {
-                valorActual = valorActual.substring(1);
-            } else {
-                valorActual = "-" + valorActual;
-            }
-            vista.setTextoPantalla(valorActual);
-        }
-    }
 
-    // Seleccionar operación
-    public void seleccionarOperacion(String op) {
-
-        if (valorActual.isEmpty()) {
-            JOptionPane.showMessageDialog(vista,
-                    "Ingrese un número primero.");
+        if (numeroActual.isEmpty()) {
             return;
         }
+        if (numeroActual.startsWith("-")) {
+            numeroActual = numeroActual.substring(1);
+        } else {
+            numeroActual = "-" + numeroActual;
+        }
 
+        frmCalculadora.setTextoPantalla(numeroActual);
+    }
+
+    public void seleccionarOperacion(String nuevaOperacion) {
+
+        if (numeroActual.isEmpty()) {
+            frmCalculadora.setTextoPantalla("Ingrese un número primero.");
+            return;
+        }
         if (!operacion.isEmpty()) {
-            JOptionPane.showMessageDialog(vista,
-                    "Ya seleccionó una operación.");
+            frmCalculadora.setTextoPantalla("Ya seleccionó una operación.");
             return;
         }
 
         try {
-            primerValor = Double.parseDouble(valorActual);
-            operacion = op;
-            valorActual = "";
+            numero1 = Double.parseDouble(numeroActual);
+            operacion = nuevaOperacion;
+            numeroActual = "";
+        }catch(NumberFormatException error) {
 
-        } catch (NumberFormatException e) {
-            JOptionPane.showMessageDialog(vista,
-                    "Número inválido.");
+            frmCalculadora.setTextoPantalla("El número no es válido.");
         }
     }
 
-    // Igual
     public void calcularResultado() {
 
         if (operacion.isEmpty()) {
-            JOptionPane.showMessageDialog(vista,
-                    "Seleccione una operación.");
+            frmCalculadora.setTextoPantalla("Seleccione una operación.");
             return;
         }
-
-        if (valorActual.isEmpty()) {
-            JOptionPane.showMessageDialog(vista,
-                    "Ingrese el segundo número.");
+        if (numeroActual.isEmpty()) {
+            frmCalculadora.setTextoPantalla("Ingrese el segundo número.");
             return;
         }
-
         try {
 
-            double segundoValor = Double.parseDouble(valorActual);
+            double numero2 = Double.parseDouble(numeroActual);
             double resultado = 0;
 
             switch (operacion) {
 
                 case "+":
-                    resultado = modelo.sumar(primerValor, segundoValor);
+                    resultado = calculadora.sumar(numero1, numero2);
                     break;
 
                 case "-":
-                    resultado = modelo.restar(primerValor, segundoValor);
+                    resultado = calculadora.restar(numero1, numero2);
                     break;
 
                 case "*":
-                    resultado = modelo.multiplicar(primerValor, segundoValor);
+                    resultado = calculadora.multiplicar(numero1, numero2);
                     break;
 
                 case "/":
-                    resultado = modelo.dividir(primerValor, segundoValor);
+                    resultado = calculadora.dividir(numero1, numero2);
                     break;
             }
 
-            valorActual = String.valueOf(resultado);
+            numeroActual = String.valueOf(resultado);
+            frmCalculadora.setTextoPantalla(numeroActual);
+
             operacion = "";
-            vista.setTextoPantalla(valorActual);
+            resultadoListo = true;
 
-        } catch (NumberFormatException e) {
-
-            JOptionPane.showMessageDialog(vista,
-                    "Número inválido.");
-
-        } catch (DivisionEntreCeroException e) {
-
-            JOptionPane.showMessageDialog(vista,
-                    e.getMessage());
+        } catch (NumberFormatException error) {
+            frmCalculadora.setTextoPantalla("El número no es válido.");
+        } catch (Exception error){
+            frmCalculadora.setTextoPantalla(error.getMessage());
         }
     }
 
-    // AC
     public void borrarTodo() {
-        valorActual = "";
-        primerValor = 0;
+
+        numeroActual = "";
+        numero1 = 0;
         operacion = "";
-        vista.setTextoPantalla("0");
+        resultadoListo = false;
+
+        frmCalculadora.setTextoPantalla("0");
     }
 
-    // CE
     public void borrarEntrada() {
-        valorActual = "";
-        vista.setTextoPantalla("0");
+
+        numeroActual = "";
+        frmCalculadora.setTextoPantalla("0");
     }
 
-    // Borrar último carácter
     public void borrarUltimo() {
 
-        if (!valorActual.isEmpty()) {
+        if(!numeroActual.isEmpty())
+        {numeroActual=numeroActual.substring(0,numeroActual.length()- 1);
+        }
 
-            valorActual = valorActual.substring(0,
-                    valorActual.length() - 1);
-
-            if (valorActual.isEmpty()) {
-                vista.setTextoPantalla("0");
-            } else {
-                vista.setTextoPantalla(valorActual);
-            }
+        if(numeroActual.isEmpty()){
+            frmCalculadora.setTextoPantalla("0");
+        }else{
+            frmCalculadora.setTextoPantalla(numeroActual);
         }
     }
 }
