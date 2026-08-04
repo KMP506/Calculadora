@@ -28,21 +28,181 @@ public class FrmCalculadora extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        pnlPrincipal = new javax.swing.JPanel();
+        txtPantalla = new javax.swing.JTextField();
+        pnlBotones = new javax.swing.JPanel();
+        btnAC = new javax.swing.JButton();
+        btnCE = new javax.swing.JButton();
+        btnBorrar = new javax.swing.JButton();
+        btnDividir = new javax.swing.JButton();
+        btn7 = new javax.swing.JButton();
+        btn8 = new javax.swing.JButton();
+        btn9 = new javax.swing.JButton();
+        btnMultiplicar = new javax.swing.JButton();
+        btn4 = new javax.swing.JButton();
+        btn5 = new javax.swing.JButton();
+        btn6 = new javax.swing.JButton();
+        btnRestar = new javax.swing.JButton();
+        btn1 = new javax.swing.JButton();
+        btn2 = new javax.swing.JButton();
+        btn3 = new javax.swing.JButton();
+        btnSumar = new javax.swing.JButton();
+        btnSigno = new javax.swing.JButton();
+        btn0 = new javax.swing.JButton();
+        btnPunto = new javax.swing.JButton();
+        btnIgual = new javax.swing.JButton();
+
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setTitle("Calculadora");
+        setResizable(false);
+
+        txtPantalla.setEditable(false);
+        txtPantalla.setFont(new java.awt.Font("Segoe UI", 0, 48)); // NOI18N
+        txtPantalla.setHorizontalAlignment(javax.swing.JTextField.RIGHT);
+        txtPantalla.setText("0");
+        txtPantalla.setFocusable(false);
+        txtPantalla.addActionListener(this::txtPantallaActionPerformed);
+
+        pnlBotones.setLayout(new java.awt.GridLayout(0, 4, 5, 5));
+
+        btnAC.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        btnAC.setText("AC");
+        btnAC.setFocusable(false);
+        pnlBotones.add(btnAC);
+
+        btnCE.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        btnCE.setText("CE");
+        btnCE.setFocusable(false);
+        pnlBotones.add(btnCE);
+
+        btnBorrar.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        btnBorrar.setText("<-");
+        btnBorrar.setFocusable(false);
+        pnlBotones.add(btnBorrar);
+
+        btnDividir.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        btnDividir.setText("/");
+        btnDividir.setFocusable(false);
+        pnlBotones.add(btnDividir);
+
+        btn7.setFont(new java.awt.Font("Segoe UI", 0, 36)); // NOI18N
+        btn7.setText("7");
+        btn7.setFocusable(false);
+        pnlBotones.add(btn7);
+
+        btn8.setFont(new java.awt.Font("Segoe UI", 0, 36)); // NOI18N
+        btn8.setText("8");
+        btn8.setFocusable(false);
+        pnlBotones.add(btn8);
+
+        btn9.setFont(new java.awt.Font("Segoe UI", 0, 36)); // NOI18N
+        btn9.setText("9");
+        btn9.setFocusable(false);
+        pnlBotones.add(btn9);
+
+        btnMultiplicar.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
+        btnMultiplicar.setText("*");
+        btnMultiplicar.setFocusable(false);
+        pnlBotones.add(btnMultiplicar);
+
+        btn4.setFont(new java.awt.Font("Segoe UI", 0, 36)); // NOI18N
+        btn4.setText("4");
+        btn4.setFocusable(false);
+        pnlBotones.add(btn4);
+
+        btn5.setFont(new java.awt.Font("Segoe UI", 0, 36)); // NOI18N
+        btn5.setText("5");
+        btn5.setFocusable(false);
+        pnlBotones.add(btn5);
+
+        btn6.setFont(new java.awt.Font("Segoe UI", 0, 36)); // NOI18N
+        btn6.setText("6");
+        btn6.setFocusable(false);
+        pnlBotones.add(btn6);
+
+        btnRestar.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
+        btnRestar.setText("-");
+        btnRestar.setFocusable(false);
+        pnlBotones.add(btnRestar);
+
+        btn1.setFont(new java.awt.Font("Segoe UI", 0, 36)); // NOI18N
+        btn1.setText("1");
+        btn1.setFocusable(false);
+        pnlBotones.add(btn1);
+
+        btn2.setFont(new java.awt.Font("Segoe UI", 0, 36)); // NOI18N
+        btn2.setText("2");
+        btn2.setFocusable(false);
+        pnlBotones.add(btn2);
+
+        btn3.setFont(new java.awt.Font("Segoe UI", 0, 36)); // NOI18N
+        btn3.setText("3");
+        btn3.setFocusable(false);
+        pnlBotones.add(btn3);
+
+        btnSumar.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
+        btnSumar.setText("+");
+        btnSumar.setFocusable(false);
+        pnlBotones.add(btnSumar);
+
+        btnSigno.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
+        btnSigno.setText("+/-");
+        btnSigno.setFocusable(false);
+        pnlBotones.add(btnSigno);
+
+        btn0.setFont(new java.awt.Font("Segoe UI", 0, 36)); // NOI18N
+        btn0.setText("0");
+        btn0.setFocusable(false);
+        pnlBotones.add(btn0);
+
+        btnPunto.setFont(new java.awt.Font("Segoe UI", 0, 36)); // NOI18N
+        btnPunto.setText(".");
+        btnPunto.setFocusable(false);
+        pnlBotones.add(btnPunto);
+
+        btnIgual.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
+        btnIgual.setText("=");
+        btnIgual.setFocusable(false);
+        pnlBotones.add(btnIgual);
+
+        javax.swing.GroupLayout pnlPrincipalLayout = new javax.swing.GroupLayout(pnlPrincipal);
+        pnlPrincipal.setLayout(pnlPrincipalLayout);
+        pnlPrincipalLayout.setHorizontalGroup(
+            pnlPrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnlPrincipalLayout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(pnlPrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(pnlBotones, javax.swing.GroupLayout.DEFAULT_SIZE, 685, Short.MAX_VALUE)
+                    .addComponent(txtPantalla))
+                .addContainerGap())
+        );
+        pnlPrincipalLayout.setVerticalGroup(
+            pnlPrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(pnlPrincipalLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(txtPantalla, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(pnlBotones, javax.swing.GroupLayout.DEFAULT_SIZE, 560, Short.MAX_VALUE)
+                .addContainerGap())
+        );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
+            .addComponent(pnlPrincipal, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 300, Short.MAX_VALUE)
+            .addComponent(pnlPrincipal, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void txtPantallaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtPantallaActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtPantallaActionPerformed
 
     /**
      * @param args the command line arguments
@@ -70,5 +230,28 @@ public class FrmCalculadora extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btn0;
+    private javax.swing.JButton btn1;
+    private javax.swing.JButton btn2;
+    private javax.swing.JButton btn3;
+    private javax.swing.JButton btn4;
+    private javax.swing.JButton btn5;
+    private javax.swing.JButton btn6;
+    private javax.swing.JButton btn7;
+    private javax.swing.JButton btn8;
+    private javax.swing.JButton btn9;
+    private javax.swing.JButton btnAC;
+    private javax.swing.JButton btnBorrar;
+    private javax.swing.JButton btnCE;
+    private javax.swing.JButton btnDividir;
+    private javax.swing.JButton btnIgual;
+    private javax.swing.JButton btnMultiplicar;
+    private javax.swing.JButton btnPunto;
+    private javax.swing.JButton btnRestar;
+    private javax.swing.JButton btnSigno;
+    private javax.swing.JButton btnSumar;
+    private javax.swing.JPanel pnlBotones;
+    private javax.swing.JPanel pnlPrincipal;
+    private javax.swing.JTextField txtPantalla;
     // End of variables declaration//GEN-END:variables
 }
