@@ -2,48 +2,42 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
-package controlador;
+try {
 
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
-import modelo.Calculadora;
-import modelo.Calculadora.DivisionEntreCeroException;
-import modelo.Calculadora.NumeroInvalidoException;
-import vista.FrmCalculadora;
+    double num1 = Double.parseDouble(primerValor);
+    double num2 = Double.parseDouble(segundoValor);
 
-public class ControladorCalculadora {
+    double resultado = 0;
 
-    private Calculadora modelo;
-    private FrmCalculadora vista;
+    switch (operacion) {
 
-    private String valorActual = "";
-    private double primerValor;
-    private String operacion = "";
-    private boolean resultadoMostrado = false;
+        case "+":
+            resultado = modelo.sumar(num1, num2);
+            break;
 
-    public ControladorCalculadora(Calculadora modelo, FrmCalculadora vista) {
+        case "-":
+            resultado = modelo.restar(num1, num2);
+            break;
 
-        this.modelo = modelo;
-        this.vista = vista;
+        case "*":
+            resultado = modelo.multiplicar(num1, num2);
+            break;
 
-        agregarEventos();
+        case "/":
+            resultado = modelo.dividir(num1, num2);
+            break;
     }
 
-    private void agregarEventos() {
+    vista.setTextoPantalla(String.valueOf(resultado));
 
-        // Botones numéricos
-        vista.btn0.addActionListener(e -> agregarNumero("0"));
-        vista.btn1.addActionListener(e -> agregarNumero("1"));
-        vista.btn2.addActionListener(e -> agregarNumero("2"));
-        vista.btn3.addActionListener(e -> agregarNumero("3"));
-        vista.btn4.addActionListener(e -> agregarNumero("4"));
-        vista.btn5.addActionListener(e -> agregarNumero("5"));
-        vista.btn6.addActionListener(e -> agregarNumero("6"));
-        vista.btn7.addActionListener(e -> agregarNumero("7"));
-        vista.btn8.addActionListener(e -> agregarNumero("8"));
-        vista.btn9.addActionListener(e -> agregarNumero("9"));
+} catch (NumberFormatException e) {
 
-        // Punto decimal
-        vista.btnPunto.addActionListener(e -> agregarPunto());
+    JOptionPane.showMessageDialog(null,
+            "Número inválido.");
 
-    
+} catch (Calculadora.DivisionEntreCeroException e) {
+
+    JOptionPane.showMessageDialog(null,
+            e.getMessage());
+
+}
