@@ -2,42 +2,33 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
-try {
 
-    double num1 = Double.parseDouble(primerValor);
-    double num2 = Double.parseDouble(segundoValor);
+package controlador;
 
-    double resultado = 0;
+import modelo.Calculadora;
+import vista.FrmCalculadora;
+import javax.swing.JOptionPane;
 
-    switch (operacion) {
+public class ControladorCalculadora {
 
-        case "+":
-            resultado = modelo.sumar(num1, num2);
-            break;
+    private Calculadora modelo;
+    private FrmCalculadora vista;
 
-        case "-":
-            resultado = modelo.restar(num1, num2);
-            break;
+    private String valorActual = "";
+    private double primerValor = 0;
+    private String operacion = "";
+    private boolean resultadoMostrado = false;
 
-        case "*":
-            resultado = modelo.multiplicar(num1, num2);
-            break;
+    public ControladorCalculadora(Calculadora modelo, FrmCalculadora vista) {
 
-        case "/":
-            resultado = modelo.dividir(num1, num2);
-            break;
+        this.modelo = modelo;
+        this.vista = vista;
+
+        iniciarEventos();
     }
 
-    vista.setTextoPantalla(String.valueOf(resultado));
+    private void iniciarEventos() {
 
-} catch (NumberFormatException e) {
-
-    JOptionPane.showMessageDialog(null,
-            "Número inválido.");
-
-} catch (Calculadora.DivisionEntreCeroException e) {
-
-    JOptionPane.showMessageDialog(null,
-            e.getMessage());
+    }
 
 }
