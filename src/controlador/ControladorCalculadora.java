@@ -5,13 +5,6 @@
 
 package controlador;
 
-
-import modelo.Calculadora;
-import modelo.Calculadora.DivisionEntreCeroException;
-import vista.FrmCalculadora;
-
-import javax.swing.JOptionPane;
-
 public class ControladorCalculadora {
 
      private modelo.Calculadora calculadora;
@@ -54,27 +47,27 @@ public class ControladorCalculadora {
         }
     }
 
-    public void cambiarSigno() {
+    public void cambiarSigno(){
 
-        if (numeroActual.isEmpty()) {
+        if(numeroActual.isEmpty()) {
             return;
         }
-        if (numeroActual.startsWith("-")) {
+        if(numeroActual.startsWith("-")) {
             numeroActual = numeroActual.substring(1);
-        } else {
+        }else{
             numeroActual = "-" + numeroActual;
         }
 
         frmCalculadora.setTextoPantalla(numeroActual);
     }
 
-    public void seleccionarOperacion(String nuevaOperacion) {
+    public void seleccionarOperacion(String nuevaOperacion){
 
-        if (numeroActual.isEmpty()) {
+        if(numeroActual.isEmpty()){
             frmCalculadora.setTextoPantalla("Ingrese un número primero.");
             return;
         }
-        if (!operacion.isEmpty()) {
+        if(!operacion.isEmpty()){
             frmCalculadora.setTextoPantalla("Ya seleccionó una operación.");
             return;
         }
@@ -83,7 +76,7 @@ public class ControladorCalculadora {
             numero1 = Double.parseDouble(numeroActual);
             operacion = nuevaOperacion;
             numeroActual = "";
-        }catch(NumberFormatException error) {
+        }catch(NumberFormatException error){
 
             frmCalculadora.setTextoPantalla("El número no es válido.");
         }
@@ -91,15 +84,15 @@ public class ControladorCalculadora {
 
     public void calcularResultado() {
 
-        if (operacion.isEmpty()) {
+        if(operacion.isEmpty()) {
             frmCalculadora.setTextoPantalla("Seleccione una operación.");
             return;
         }
-        if (numeroActual.isEmpty()) {
+        if(numeroActual.isEmpty()) {
             frmCalculadora.setTextoPantalla("Ingrese el segundo número.");
             return;
         }
-        try {
+        try{
 
             double numero2 = Double.parseDouble(numeroActual);
             double resultado = 0;

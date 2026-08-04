@@ -94,6 +94,9 @@
                 <Property name="text" type="java.lang.String" value="AC"/>
                 <Property name="focusable" type="boolean" value="false"/>
               </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnACActionPerformed"/>
+              </Events>
             </Component>
             <Component class="javax.swing.JButton" name="btnCE">
               <Properties>
@@ -103,6 +106,9 @@
                 <Property name="text" type="java.lang.String" value="CE"/>
                 <Property name="focusable" type="boolean" value="false"/>
               </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnCEActionPerformed"/>
+              </Events>
             </Component>
             <Component class="javax.swing.JButton" name="btnBorrar">
               <Properties>
@@ -112,6 +118,9 @@
                 <Property name="text" type="java.lang.String" value="&lt;-"/>
                 <Property name="focusable" type="boolean" value="false"/>
               </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnBorrarActionPerformed"/>
+              </Events>
             </Component>
             <Component class="javax.swing.JButton" name="btnDividir">
               <Properties>
@@ -121,6 +130,9 @@
                 <Property name="text" type="java.lang.String" value="/"/>
                 <Property name="focusable" type="boolean" value="false"/>
               </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnDividirActionPerformed"/>
+              </Events>
             </Component>
             <Component class="javax.swing.JButton" name="btn7">
               <Properties>
@@ -130,6 +142,9 @@
                 <Property name="text" type="java.lang.String" value="7"/>
                 <Property name="focusable" type="boolean" value="false"/>
               </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btn7ActionPerformed"/>
+              </Events>
             </Component>
             <Component class="javax.swing.JButton" name="btn8">
               <Properties>
@@ -139,6 +154,9 @@
                 <Property name="text" type="java.lang.String" value="8"/>
                 <Property name="focusable" type="boolean" value="false"/>
               </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btn8ActionPerformed"/>
+              </Events>
             </Component>
             <Component class="javax.swing.JButton" name="btn9">
               <Properties>
@@ -148,6 +166,9 @@
                 <Property name="text" type="java.lang.String" value="9"/>
                 <Property name="focusable" type="boolean" value="false"/>
               </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btn9ActionPerformed"/>
+              </Events>
             </Component>
             <Component class="javax.swing.JButton" name="btnMultiplicar">
               <Properties>
@@ -157,6 +178,9 @@
                 <Property name="text" type="java.lang.String" value="*"/>
                 <Property name="focusable" type="boolean" value="false"/>
               </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnMultiplicarActionPerformed"/>
+              </Events>
             </Component>
             <Component class="javax.swing.JButton" name="btn4">
               <Properties>
@@ -166,6 +190,9 @@
                 <Property name="text" type="java.lang.String" value="4"/>
                 <Property name="focusable" type="boolean" value="false"/>
               </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btn4ActionPerformed"/>
+              </Events>
             </Component>
             <Component class="javax.swing.JButton" name="btn5">
               <Properties>
@@ -175,6 +202,9 @@
                 <Property name="text" type="java.lang.String" value="5"/>
                 <Property name="focusable" type="boolean" value="false"/>
               </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btn5ActionPerformed"/>
+              </Events>
             </Component>
             <Component class="javax.swing.JButton" name="btn6">
               <Properties>
@@ -184,6 +214,9 @@
                 <Property name="text" type="java.lang.String" value="6"/>
                 <Property name="focusable" type="boolean" value="false"/>
               </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btn6ActionPerformed"/>
+              </Events>
             </Component>
             <Component class="javax.swing.JButton" name="btnRestar">
               <Properties>
@@ -193,6 +226,9 @@
                 <Property name="text" type="java.lang.String" value="-"/>
                 <Property name="focusable" type="boolean" value="false"/>
               </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnRestarActionPerformed"/>
+              </Events>
             </Component>
             <Component class="javax.swing.JButton" name="btn1">
               <Properties>
@@ -202,6 +238,9 @@
                 <Property name="text" type="java.lang.String" value="1"/>
                 <Property name="focusable" type="boolean" value="false"/>
               </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btn1ActionPerformed"/>
+              </Events>
             </Component>
             <Component class="javax.swing.JButton" name="btn2">
               <Properties>
@@ -211,6 +250,9 @@
                 <Property name="text" type="java.lang.String" value="2"/>
                 <Property name="focusable" type="boolean" value="false"/>
               </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btn2ActionPerformed"/>
+              </Events>
             </Component>
             <Component class="javax.swing.JButton" name="btn3">
               <Properties>
@@ -220,6 +262,9 @@
                 <Property name="text" type="java.lang.String" value="3"/>
                 <Property name="focusable" type="boolean" value="false"/>
               </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btn3ActionPerformed"/>
+              </Events>
             </Component>
             <Component class="javax.swing.JButton" name="btnSumar">
               <Properties>
@@ -229,6 +274,9 @@
                 <Property name="text" type="java.lang.String" value="+"/>
                 <Property name="focusable" type="boolean" value="false"/>
               </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnSumarActionPerformed"/>
+              </Events>
             </Component>
             <Component class="javax.swing.JButton" name="btnSigno">
               <Properties>
@@ -238,6 +286,9 @@
                 <Property name="text" type="java.lang.String" value="+/-"/>
                 <Property name="focusable" type="boolean" value="false"/>
               </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnSignoActionPerformed"/>
+              </Events>
             </Component>
             <Component class="javax.swing.JButton" name="btn0">
               <Properties>
@@ -247,6 +298,9 @@
                 <Property name="text" type="java.lang.String" value="0"/>
                 <Property name="focusable" type="boolean" value="false"/>
               </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btn0ActionPerformed"/>
+              </Events>
             </Component>
             <Component class="javax.swing.JButton" name="btnPunto">
               <Properties>
@@ -256,6 +310,9 @@
                 <Property name="text" type="java.lang.String" value="."/>
                 <Property name="focusable" type="boolean" value="false"/>
               </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnPuntoActionPerformed"/>
+              </Events>
             </Component>
             <Component class="javax.swing.JButton" name="btnIgual">
               <Properties>
@@ -265,6 +322,9 @@
                 <Property name="text" type="java.lang.String" value="="/>
                 <Property name="focusable" type="boolean" value="false"/>
               </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnIgualActionPerformed"/>
+              </Events>
             </Component>
           </SubComponents>
         </Container>

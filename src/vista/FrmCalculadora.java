@@ -4,13 +4,14 @@
  */
 package vista;
 
+
 /**
  *
  * @author efrai
  */
 public class FrmCalculadora extends javax.swing.JFrame {
     
-    
+    private controlador.ControladorCalculadora controladorCalculadora;
     public void setTextoPantalla(String texto){
         txtPantalla.setText(texto);
     }
@@ -22,6 +23,8 @@ public class FrmCalculadora extends javax.swing.JFrame {
      */
     public FrmCalculadora() {
         initComponents();
+        modelo.Calculadora calculadora= new modelo.Calculadora();
+        controladorCalculadora= new controlador.ControladorCalculadora(calculadora, this);
     }
 
     /**
@@ -73,101 +76,121 @@ public class FrmCalculadora extends javax.swing.JFrame {
         btnAC.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         btnAC.setText("AC");
         btnAC.setFocusable(false);
+        btnAC.addActionListener(this::btnACActionPerformed);
         pnlBotones.add(btnAC);
 
         btnCE.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         btnCE.setText("CE");
         btnCE.setFocusable(false);
+        btnCE.addActionListener(this::btnCEActionPerformed);
         pnlBotones.add(btnCE);
 
         btnBorrar.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         btnBorrar.setText("<-");
         btnBorrar.setFocusable(false);
+        btnBorrar.addActionListener(this::btnBorrarActionPerformed);
         pnlBotones.add(btnBorrar);
 
         btnDividir.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         btnDividir.setText("/");
         btnDividir.setFocusable(false);
+        btnDividir.addActionListener(this::btnDividirActionPerformed);
         pnlBotones.add(btnDividir);
 
         btn7.setFont(new java.awt.Font("Segoe UI", 0, 36)); // NOI18N
         btn7.setText("7");
         btn7.setFocusable(false);
+        btn7.addActionListener(this::btn7ActionPerformed);
         pnlBotones.add(btn7);
 
         btn8.setFont(new java.awt.Font("Segoe UI", 0, 36)); // NOI18N
         btn8.setText("8");
         btn8.setFocusable(false);
+        btn8.addActionListener(this::btn8ActionPerformed);
         pnlBotones.add(btn8);
 
         btn9.setFont(new java.awt.Font("Segoe UI", 0, 36)); // NOI18N
         btn9.setText("9");
         btn9.setFocusable(false);
+        btn9.addActionListener(this::btn9ActionPerformed);
         pnlBotones.add(btn9);
 
         btnMultiplicar.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
         btnMultiplicar.setText("*");
         btnMultiplicar.setFocusable(false);
+        btnMultiplicar.addActionListener(this::btnMultiplicarActionPerformed);
         pnlBotones.add(btnMultiplicar);
 
         btn4.setFont(new java.awt.Font("Segoe UI", 0, 36)); // NOI18N
         btn4.setText("4");
         btn4.setFocusable(false);
+        btn4.addActionListener(this::btn4ActionPerformed);
         pnlBotones.add(btn4);
 
         btn5.setFont(new java.awt.Font("Segoe UI", 0, 36)); // NOI18N
         btn5.setText("5");
         btn5.setFocusable(false);
+        btn5.addActionListener(this::btn5ActionPerformed);
         pnlBotones.add(btn5);
 
         btn6.setFont(new java.awt.Font("Segoe UI", 0, 36)); // NOI18N
         btn6.setText("6");
         btn6.setFocusable(false);
+        btn6.addActionListener(this::btn6ActionPerformed);
         pnlBotones.add(btn6);
 
         btnRestar.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
         btnRestar.setText("-");
         btnRestar.setFocusable(false);
+        btnRestar.addActionListener(this::btnRestarActionPerformed);
         pnlBotones.add(btnRestar);
 
         btn1.setFont(new java.awt.Font("Segoe UI", 0, 36)); // NOI18N
         btn1.setText("1");
         btn1.setFocusable(false);
+        btn1.addActionListener(this::btn1ActionPerformed);
         pnlBotones.add(btn1);
 
         btn2.setFont(new java.awt.Font("Segoe UI", 0, 36)); // NOI18N
         btn2.setText("2");
         btn2.setFocusable(false);
+        btn2.addActionListener(this::btn2ActionPerformed);
         pnlBotones.add(btn2);
 
         btn3.setFont(new java.awt.Font("Segoe UI", 0, 36)); // NOI18N
         btn3.setText("3");
         btn3.setFocusable(false);
+        btn3.addActionListener(this::btn3ActionPerformed);
         pnlBotones.add(btn3);
 
         btnSumar.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
         btnSumar.setText("+");
         btnSumar.setFocusable(false);
+        btnSumar.addActionListener(this::btnSumarActionPerformed);
         pnlBotones.add(btnSumar);
 
         btnSigno.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
         btnSigno.setText("+/-");
         btnSigno.setFocusable(false);
+        btnSigno.addActionListener(this::btnSignoActionPerformed);
         pnlBotones.add(btnSigno);
 
         btn0.setFont(new java.awt.Font("Segoe UI", 0, 36)); // NOI18N
         btn0.setText("0");
         btn0.setFocusable(false);
+        btn0.addActionListener(this::btn0ActionPerformed);
         pnlBotones.add(btn0);
 
         btnPunto.setFont(new java.awt.Font("Segoe UI", 0, 36)); // NOI18N
         btnPunto.setText(".");
         btnPunto.setFocusable(false);
+        btnPunto.addActionListener(this::btnPuntoActionPerformed);
         pnlBotones.add(btnPunto);
 
         btnIgual.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
         btnIgual.setText("=");
         btnIgual.setFocusable(false);
+        btnIgual.addActionListener(this::btnIgualActionPerformed);
         pnlBotones.add(btnIgual);
 
         javax.swing.GroupLayout pnlPrincipalLayout = new javax.swing.GroupLayout(pnlPrincipal);
@@ -208,6 +231,86 @@ public class FrmCalculadora extends javax.swing.JFrame {
     private void txtPantallaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtPantallaActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_txtPantallaActionPerformed
+
+    private void btn0ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn0ActionPerformed
+        controladorCalculadora.agregarNumero("0");
+    }//GEN-LAST:event_btn0ActionPerformed
+
+    private void btn1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn1ActionPerformed
+        controladorCalculadora.agregarNumero("1");
+    }//GEN-LAST:event_btn1ActionPerformed
+
+    private void btn2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn2ActionPerformed
+        controladorCalculadora.agregarNumero("2");
+    }//GEN-LAST:event_btn2ActionPerformed
+
+    private void btn3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn3ActionPerformed
+        controladorCalculadora.agregarNumero("3");
+    }//GEN-LAST:event_btn3ActionPerformed
+
+    private void btn4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn4ActionPerformed
+        controladorCalculadora.agregarNumero("4");
+    }//GEN-LAST:event_btn4ActionPerformed
+
+    private void btn5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn5ActionPerformed
+        controladorCalculadora.agregarNumero("5");
+    }//GEN-LAST:event_btn5ActionPerformed
+
+    private void btn6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn6ActionPerformed
+        controladorCalculadora.agregarNumero("6");
+    }//GEN-LAST:event_btn6ActionPerformed
+
+    private void btn7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn7ActionPerformed
+        controladorCalculadora.agregarNumero("7");
+    }//GEN-LAST:event_btn7ActionPerformed
+
+    private void btn8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn8ActionPerformed
+        controladorCalculadora.agregarNumero("8");
+    }//GEN-LAST:event_btn8ActionPerformed
+
+    private void btn9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn9ActionPerformed
+        controladorCalculadora.agregarNumero("9");
+    }//GEN-LAST:event_btn9ActionPerformed
+
+    private void btnSumarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSumarActionPerformed
+        controladorCalculadora.seleccionarOperacion("+");
+    }//GEN-LAST:event_btnSumarActionPerformed
+
+    private void btnRestarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRestarActionPerformed
+        controladorCalculadora.seleccionarOperacion("-");
+    }//GEN-LAST:event_btnRestarActionPerformed
+
+    private void btnMultiplicarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnMultiplicarActionPerformed
+        controladorCalculadora.seleccionarOperacion("*");
+    }//GEN-LAST:event_btnMultiplicarActionPerformed
+
+    private void btnIgualActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnIgualActionPerformed
+       controladorCalculadora.calcularResultado();
+    }//GEN-LAST:event_btnIgualActionPerformed
+
+    private void btnDividirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDividirActionPerformed
+       controladorCalculadora.seleccionarOperacion("/");
+    }//GEN-LAST:event_btnDividirActionPerformed
+
+    private void btnPuntoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPuntoActionPerformed
+        controladorCalculadora.agregarPunto();
+    }//GEN-LAST:event_btnPuntoActionPerformed
+
+    private void btnSignoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSignoActionPerformed
+        controladorCalculadora.cambiarSigno();
+    }//GEN-LAST:event_btnSignoActionPerformed
+
+    private void btnACActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnACActionPerformed
+        controladorCalculadora.borrarTodo();
+    }//GEN-LAST:event_btnACActionPerformed
+
+    private void btnCEActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCEActionPerformed
+        controladorCalculadora.borrarEntrada();
+    }//GEN-LAST:event_btnCEActionPerformed
+
+    private void btnBorrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBorrarActionPerformed
+        controladorCalculadora.borrarUltimo();
+    }//GEN-LAST:event_btnBorrarActionPerformed
 
     /**
      * @param args the command line arguments
